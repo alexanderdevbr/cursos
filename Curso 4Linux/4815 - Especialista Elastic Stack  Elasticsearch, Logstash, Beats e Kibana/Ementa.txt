@@ -1,0 +1,86 @@
+Módulo 01  (Semana 01)
+    Aula 01 - Introdução e Fundamentos do Elastic Stack
+        Aula 1.1 O que é o Elastic Stack e sua História
+        Aula 1.2 Conceitos básicos – Cluster
+        Aula 1.3 Conceitos básicos – Node e Tipos de Nodes
+        Aula 1.4 Conceitos básicos – Index, Type e Shards e Réplicas
+        Aula 1.5 Lab
+
+    Aula 02 – Instalação e Configuração do Elasticsearch
+        Aula 2.1 Pacotes de Distribuições X Pacotes de Binários
+        Aula 2.2 Estrutura de diretórios do Elasticsearch
+        Aula 2.3 Configurando o arquivos elasticsearch.yml e jvm.options
+        Aula 2.4 Lab
+
+    Aula 03 – Trabalhando com Índices e Documentos
+        Aula 3.1 Trabalhando com Índices no Elasticsearch
+        Aula 3.2 Trabalhando com Documentos no Elasticsearch
+        Aula 3.3 Definições de Índice(Index Settings)
+        Aula 3.4 Considerações sobre Tipos e Mapeamentos(Mapping)
+        Aula 3.5 Lab
+
+    Aula 04 – Criando meu primeiro Cluster
+        Aula 4.1 Tipos de Cluster
+        Aula 4.2 Tipos de Nodes
+        Aula 4.3 Monitorando o Cluster
+        Aula 4.4 Escalando o Cluster Horizontalmente e Verticalmente
+        Aula 4.3 Lab
+
+Módulo 02  (Semana 02)
+    Aula 05 -  Shards e Replicas
+        Aula 5.1 Conceito de Shards
+        Aula 5.2 Boas práticas - Size e Quantidade de Shards
+        Aula 5.3 Conceito de Replicação
+        Aula 5.4 Boas Práticas - Número de Réplicas X Shards X Tamanho da Shards
+        Aula 5.5 Lab
+
+    Aula 06 -  Beats  - Ingestão de Dados no Elasticsearch
+        Aula 6.1 O que é o Beats Platform
+        Aula 6.2 Instalando e Configurando o Metricbeats
+        Aula 6.3 Instalando e Configurando o Filebeats
+        Aula 6.4 Criando os Dashboards no Kibana
+        Aula 6.5 Lab
+
+    Aula 07 -  Logstash - Ingestão de Dados no Elasticsearch
+        Aula 7.1 O que é o Logstash
+        Aula 7.2 Input,Filter e Output
+        Aula 7.3 Grok Filter e JDBC Plugin - Integração com Banco de Dados
+        Aula 7.4 Monitorando o Logstash
+        Aula 7.5 Lab
+
+    Aula 08 -  Mundo Real - Criando um Cluster de Alto Desempenho
+        Aula 8.1 Qual o propósito de seu Cluster?
+        Aula 8.2 Capacity Planning
+        Aula 8.3 Considerações Throughput para Indexação
+        Aula 8.4 Considerações Throughput para Busca
+        Aula 8.5 Lab
+
+
+Módulo 03  (Semana 03)
+    Aula 09 -  Administrando e Monitorando o Cluster Elasticsearch
+        Aula 9.1 Cluster APIs, Indices APIs e cat APIs
+        Aula 9.2 Ferramentas de Administração e Monitoramento
+        Aula 9.3 Instalando e configurando o Cerebro e Curator
+        Aula 9.4 X-Pack – Overview
+        Aula 9.5 Lab
+
+    Aula 10 -   Analise de dados com Kibana
+        Aula 10.1 O que é o Kibana?
+        Aula 10.2 Explorando o Discovery Page, Vizualize e Dashboard
+        Aula 10.3 Explorando o Timelion
+        Aula 10.4 Extendendo o Kibana com Plugins e Plugin Vegas
+        Aula 10.5 Lab
+
+    Aula 11 -  Cenários reais – Juntando tudo e criando soluções com Elastisearch
+        Aula 11.1 Cenário 1 - Coletar e Indexar de logs
+        Aula 11.2 Cenário 2 - Coletar e Indexar Banco de Dados
+        Aula 11.3 Cenário 3 – Coletar dados do Twitter para análise de comportamento
+        Aula 11.4 Cenário 4 – Indexar páginas da Web
+        Aula 11.5 Lab
+
+    Aula 12 -   Elasticsearch e integração com Hadoop
+        Aula 12.1 O que é o Hadoop?
+        Aula 12.2 Instalando e Configurando o Hadoop em Pseudo-Mode
+        Aula 12.3 Módulo Elasticsaerch-Hadoop
+        Aula 12.4 Usando a Elasticsearch-Hadoop com Pig
+        Aula 12.5 Lab
