@@ -1,0 +1,74 @@
+Introdução e Instalação do Docker
+    Plataforma e Editions
+    Arquitetura e Requerimentos
+    Docker Namespaces e Cgroups
+    Instalação do Docker no Linux
+    Utilizando o Docker Gerenciar Logging Drivers
+    Gerenciar Imagens no Docker
+
+Introdução a Imagens no Docker
+    Criar conta no Docker Hub
+    Entendendo o Dockerfile
+    Criando imagem com Dockerfile
+    Gerenciamento de imagens no Docker
+    Enviar imagem ao Docker Hub
+    Gerenciar Volumes no Docker
+
+Introdução a Storage Drivers e Volumes
+    Volumes Personalizados,
+    Backup e Restore
+    Gerenciar bind mounts no Docker
+    Gerenciar Plugins de volume no Docker
+    Volume Persistente com NFS
+    Gerenciar Redes no Docker
+
+Introdução a Redes no Docker
+    Configuração de portas, links e DNS
+    Gerenciar redes no Docker
+    Comandos de gerenciamento de redes no Docker
+    Gerenciar Docker Registry e Compose
+
+Introdução e instalação do Docker Registry
+    Configurar certificados e clientes
+    Configurar autenticação Básica
+    Enviar imagem ao Docker Registry
+    Introdução e Instalação do Docker Compose
+    Orquestrar containers com Docker Compose
+    Docker Compose: Gerenciar Volumes e Redes
+    Gerenciar Docker Registry com Compose
+    Gerenciar Cluster com Docker Swarm
+
+Introdução ao Docker Swarm
+    Criação do Cluster Swarm
+    Gerenciamento do Cluster Swarm
+    Manutenção no Cluster Swam
+    Gerenciar Serviços no Docker Swarm
+
+Introdução a serviços
+    Gerenciar redes Overlay no Docker
+    Gerenciar Plugins de Redes
+    Gerenciar serviços no Swarm
+    Routing Mesh e Balanceamento de Carga
+
+Introdução ao Routing Mesh
+    Routing Mesh: Ingress x Host
+    Descoberta de Serviços: VIP e DNSRR
+    Balanceamento de carga com Traefik
+    Redirecionamento de URLS com Traefik
+    Gerenciar Stacks no Docker Swarm e Dashboard
+
+Introdução a Stacks
+    Utilizar redes e volumes com serviços
+    Gerenciar Stacks no Docker
+    Escalonar Stacks
+    Gerenciar limites
+    Introdução ao Portainer
+    Instalação do Portainer
+    Gerenciar stacks com Portainer
+    Provisionar Ambientes com Docker Machine
+
+Introdução e instalação do Docker Machine
+    Provisionar ambiente Docker no Virtualbox
+    Comandos de gerenciamento
+    Provisionar ambiente Docker na Nuvem
+    Criar Cluster Swarm com Docker Machine

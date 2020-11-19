@@ -1,0 +1,8 @@
+Anotações Curso Docker 4Linux
+=============================
+
+Instrutor: Ricardo
+Curso....: 4540
+Turma....: 7677
+
+Conteiner -> Isolamento de contexto dentro do SO por meio de Namespaces e Cgroups.

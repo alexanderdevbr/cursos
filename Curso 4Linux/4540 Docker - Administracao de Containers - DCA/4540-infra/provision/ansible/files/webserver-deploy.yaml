@@ -1,0 +1,37 @@
+version: '3.1'
+
+services:
+  webserver:
+    image: "registry:5000/webserver-wordpress:latest"
+    ports:
+      - "8081:80"
+    deploy:
+      mode: global
+#      replicas: 2
+      placement:
+        constraints: [node.role == manager]
+#      labels:
+#        - "traefik.enable=true"
+#        - "traefik.port=80"
+#        - "traefik.backend=webserver"
+#        - "traefik.docker.network=traefik-net"
+#        - "traefik.backend.loadbalancer.swarm=true"
+#        - "traefik.frontend.rule=Host:webserver.4labs.example"
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+#      resources:
+#        limits:
+#          memory: 256M
+#          cpus: '0.2'
+#    volumes:
+#      - "volume_nfs:/var/www/html"
+#    networks:
+#      - traefik-net
+
+#volumes:
+#  volume_nfs:
+#    external: true
+#networks:
+#  traefik-net:
+#    external: true
