@@ -1,0 +1,70 @@
+Anotações Curso Especialista Elastic Stack
+==========================================
+
+Instrutor: Rodrigo Tornis
+Curso....: 4815
+Turma....: 
+
+# Verificando se as portas utilizadas pelo Elastic estão escutando
+    netstat -nltp |grep 9[23]00
+
+# Desabilitando IPV6
+vim /etc/sysctl.conf
+    net.ipv6.conf.all.disable_ipv6 = 1 
+    net.ipv6.conf.default.disable_ipv6 = 1
+
+# Diretório de Configurações do Elastic
+    /etc/elasticsearch/
+
+# Verificnaod informações do Cluster
+curl -X GET http://localhost:9200
+{
+  "name" : "81stxHx",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "6mhqvD4GSKa8PV7WToqPeA",
+  "version" : {
+    "number" : "6.3.1",
+    "build_flavor" : "default",
+    "build_type" : "rpm",
+    "build_hash" : "eb782d0",
+    "build_date" : "2018-06-29T21:59:26.107521Z",
+    "build_snapshot" : false,
+    "lucene_version" : "7.3.1",
+    "minimum_wire_compatibility_version" : "5.6.0",
+    "minimum_index_compatibility_version" : "5.0.0"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+    minimum_wire_compatibility_version  > Menor versão necessária para upgrade dos binários
+    minimum_index_compatibility_version > Menor versão necessária para upgrade dos índices
+
+informações importantes para ambiente produtivo
+===============================================
+- Recomendação mínima de 3 nós para o cluster, suficiente capaz de suportar a carga que o Elastic vai atender
+- Melhor escalar horizontal (mais nós no cluster) devido a limitações de Kernel (filedescriptor) e memória utilizada pelo Elastic (máximo 32Gb para JavaHeap sendo ideal o host ter o dobro de memória Heap utilizado)
+- Não deve ter memória swap (deve ser Desabilitado)
+- Aumentar descriptor de arquivos para usuário elasticsearch em /etc/security/limits.conf
+    elasticsearch    -       nofile          65536
+- Ajustar parametro de kernel /etc/sysctl.conf
+    vm.max_map_count = 262144
+- Ajustar arquivo de configuração Elastic /etc/elasticsearch/elasticsearch.yml
+    cluster.name: <nome_cluster>
+    node.name: <nome_do_no>
+    path.data: <diretorio_armazenamento_index>
+    path.logs: <diretorio_armazenamento_logs>
+    network.host: <ip_interface_rede>
+    http.port: 9200
+    discovery.seed_hosts: ["<IPs_NOS_MASTER"] 
+    cluster.initial_master_nodes: ["<IP_PRIMEIRO_NO_CRIADO>"]
+
+Após Clonar para criar novos nós
+================================
+- parar serviço elasticsearch
+- excluir indices antigos
+    rm -rf /var/lib/elasticsearch/*
+- alterar
+    node.name
+    network.host
+    discovery.seed_hosts
+    comentar "cluster.initial_master_nodes"
