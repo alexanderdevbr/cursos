@@ -17,30 +17,31 @@ vim /etc/sysctl.conf
     /etc/elasticsearch/
 
 # Verificnaod informações do Cluster
-curl -X GET http://localhost:9200
-{
-  "name" : "81stxHx",
-  "cluster_name" : "elasticsearch",
-  "cluster_uuid" : "6mhqvD4GSKa8PV7WToqPeA",
-  "version" : {
-    "number" : "6.3.1",
-    "build_flavor" : "default",
-    "build_type" : "rpm",
-    "build_hash" : "eb782d0",
-    "build_date" : "2018-06-29T21:59:26.107521Z",
-    "build_snapshot" : false,
-    "lucene_version" : "7.3.1",
-    "minimum_wire_compatibility_version" : "5.6.0",
-    "minimum_index_compatibility_version" : "5.0.0"
-  },
-  "tagline" : "You Know, for Search"
-}
+    curl -X GET http://localhost:9200
+    {
+    "name" : "81stxHx",
+    "cluster_name" : "elasticsearch",
+    "cluster_uuid" : "6mhqvD4GSKa8PV7WToqPeA",
+    "version" : {
+        "number" : "6.3.1",
+        "build_flavor" : "default",
+        "build_type" : "rpm",
+        "build_hash" : "eb782d0",
+        "build_date" : "2018-06-29T21:59:26.107521Z",
+        "build_snapshot" : false,
+        "lucene_version" : "7.3.1",
+        "minimum_wire_compatibility_version" : "5.6.0",
+        "minimum_index_compatibility_version" : "5.0.0"
+    },
+    "tagline" : "You Know, for Search"
+    }
 
     minimum_wire_compatibility_version  > Menor versão necessária para upgrade dos binários
     minimum_index_compatibility_version > Menor versão necessária para upgrade dos índices
 
 informações importantes para ambiente produtivo
 ===============================================
+- https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
 - Recomendação mínima de 3 nós para o cluster, suficiente capaz de suportar a carga que o Elastic vai atender
 - Melhor escalar horizontal (mais nós no cluster) devido a limitações de Kernel (filedescriptor) e memória utilizada pelo Elastic (máximo 32Gb para JavaHeap sendo ideal o host ter o dobro de memória Heap utilizado)
 - Não deve ter memória swap (deve ser Desabilitado)
