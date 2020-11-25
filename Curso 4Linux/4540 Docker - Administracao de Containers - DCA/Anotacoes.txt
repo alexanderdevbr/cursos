@@ -6,3 +6,23 @@ Curso....: 4540
 Turma....: 7677
 
 Conteiner -> Isolamento de contexto dentro do SO por meio de Namespaces e Cgroups.
+Namespace -> Isolamento de recursos dentro de um conteiner, não permitindo que sejam acessados por outros conteiner
+Cgroups   -> Isolamento de recursos computacionais (CPU, Memória) dentro de um conteiner
+
+Comandos essenciais
+===================
+docker info / docker system info
+docker ps / docker container ls
+docker images / docker image ls 
+docker network ls
+docker search
+docker pull / docker image pull
+docker run -dit /docker container run -dit
+docker attach / docker container attach
+docker logs
+docker rm
+docker stop / docker container stop
+docker start / docker container start
+
+docker run -dit --name <nome_container> --hostname <nome_host> <imagem>
+docker container exec -it <nome_container> /bin/sh
