@@ -41,7 +41,8 @@ vim /etc/sysctl.conf
 
 informações importantes para ambiente produtivo
 ===============================================
-- https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
+- Matriz de compatibilidade dos produtos Elastic - https://www.elastic.co/pt/support/matrix
+- Itens a serem verificados para montar um ambiente Elastic de produção - https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
 - Recomendação mínima de 3 nós para o cluster, suficiente capaz de suportar a carga que o Elastic vai atender
 - Melhor escalar horizontal (mais nós no cluster) devido a limitações de Kernel (filedescriptor) e memória utilizada pelo Elastic (máximo 32Gb para JavaHeap sendo ideal o host ter o dobro de memória Heap utilizado)
 - Não deve ter memória swap (deve ser Desabilitado)
@@ -69,3 +70,96 @@ Após Clonar para criar novos nós
     network.host
     discovery.seed_hosts
     comentar "cluster.initial_master_nodes"
+
+
+Definições dos membros do cluster Elastic
+=========================================
+Master
+- node.master configurado para true
+- responsável por criar e excluir um index
+- rastrear quais nós fazem parte do cluster
+- gerenciar quais shards são alocados em quais nós
+- importante para garantir integridade do cluster que tenha apenas um único master eleito
+
+Data node
+- node.data configurado para true
+- Contém de fato o dado armazenado em shards
+- Realiza operações de indexação, pesquisa e agregações
+- Fazem uso intensivo de IO, memória e CPU
+
+Cliente node (coordinating node)
+- Ajustar os parâmetros node.master, node.data e node.ingest para false
+- Rotear as requisições para os Data Nodes funcionando como um balanceador inteligente
+- Usado em cluster com muitos Data Nodes 
+
+Ingest node
+- node.ingest configurado para true
+- Executar pipelines para o tratamento de documentos
+- Usado para transformações simples para uma alta carga de ingestão
+
+Definições 
+=========================================
+
+Shards e Replicas
+- Fragmentos do dado
+- Equalizar, subdividir e replicar dado e não sobrecarregar uma única máquina
+- Replicas são para garantir mecanismo de failover em caso de falha em algum shard
+- Instâncias do Lucene onde de fato é armazenado o dado
+- Menor fragmento dentro do Cluster Elastic
+
+Index
+- Nome lógico para os Shards
+- Estrutura que contém os diversos Types
+- Analogia a um Database
+- Pode particionar um indice por tempo, tamanho ou qualquer outro modelo
+
+Type
+- Estrutura que contem uma mesma classe de documentos
+- Possui um mapeamento que descreve os campos e seu tipo dentro de um indice e como esses campos devem ser indexados pelo Lucene
+- Definir corretamente o mapeamento de um Type faz toda diferença na performance do cluster
+- Analogia a uma tabela
+
+
+Trabalhando com Indices e documentos
+====================================
+
+Criando "meu_indice"
+$ curl -X PUT http://localhost:9200/meu_indice?pretty
+
+Consultando "meu_indice"
+$ curl -X GET http://localhost:9200/meu_indice?pretty
+
+Removendo "meu_indice"
+$ curl -X DELETE http://localhost:9200/meu_indice?pretty
+
+Inserindo "documento" no "meu_indice"
+$ curl -X PUT http://localhost:9200/meu_indice/tipo/documento?pretty -H 'Content-Type: application/json' -d "{ \"chave\": \"valor\"}"
+
+Atualizando "documento" no "meu_indice"
+$ curl -X PUT http://localhost:9200/meu_indice/tipo/documento?pretty -H 'Content-Type: application/json' -d "{ \"chave\": \"valor\"}"
+
+Consultando "documento" no "meu_indice"
+$ curl -X GET http://localhost:9200/meu_indice/_search?pretty -H 'Content-Type: application/json' -d "{ \"query\": { \"match\" : { \"chave\": \"valor\"}}}"
+
+Excluindo "documento" no "meu_indice"
+$ curl -X DELETE http://localhost:9200/meu_indice/tipo/documento?pretty
+
+Alterando configuração do "meu_indice"
+$ curl -X PUT http://localhost:9200/meu_indice/_settings -H 'Content-Type: application/json' -d '{"number_of_replicas": 0}'
+
+
+Mapping
+=======
+- Definir os tipos de campo e como serão armazenados
+- Consultando mapeamento de um index
+    $ curl -X GET http://localhost:9200/meu_indice/_mapping
+
+
+* Open Distro - Amazon
+======================
+curl http://192.168.0.150:9200/_cat/indices?v
+
+_refresh (custoso)
+
+https://github.com/tornis/elastic
+https://t.me/joinchat/CaNRUUG75508QzdtbB9vtg
