@@ -18,14 +18,33 @@
       lineinfile:
         path: /home/vagrant/.bashrc
         line: 'sudo su - suporte'
-        
+
+    - name: Instalando repositorio Docker
+      get_url:
+        url: https://download.docker.com/linux/centos/docker-ce.repo
+        dest: /etc/yum.repos.d/docker-ce.repo
+        mode: 0644
+      become: yes
+
+    - name: Update de pacotes Yum
+      yum:
+        name: '*'
+        state: latest
+
     - name: Instalando pacotes de dependencias para o curso de Docker
       yum:
-        name: ['unzip', 'wget', 'elinks', 'rsync']
+        name: ['unzip', 'wget', 'elinks', 'rsync', 'docker-ce', 'docker-ce-cli', 'containerd.io']
+
+    - name: Startando Docker e habilitando servico
+      service:
+        name: docker
+        state: started
+        enabled: yes
 
     - name: Adicionar usuário suporte
       user:
         name: suporte
+        groups: docker
         shell: /bin/bash
         password : $1$QbUARykG$p2nthVG8AkDvabKPHwboa1
 

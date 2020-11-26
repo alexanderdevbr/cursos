@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.define env['name'] do |srv|
       srv.vm.box      = env['box']
       srv.vm.hostname = env['hostname']
-      srv.vm.network 'private_network', ip: env['ipaddress'], auto_config: false
+      srv.vm.network 'private_network', ip: env['ipaddress'], auto_config: true
       if env['additional_interface'] == true
         srv.vm.network 'private_network', ip: '1.0.0.100',
           auto_config: false

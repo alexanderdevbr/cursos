@@ -18,14 +18,34 @@
       lineinfile:
         path: /home/vagrant/.bashrc
         line: 'sudo su - suporte'
-        
+
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      apt: update_cache=yes name=docker-ce state=latest
+
     - name: Instalando pacotes de dependencias para o curso de Docker
       apt:
-        name: ['unzip', 'wget', 'elinks', 'rsync']
+        name: ['unzip', 'wget', 'elinks', 'rsync', 'docker-ce', 'docker-ce-cli', 'containerd.io']
+
+    - name: Startando Docker e habilitando servico
+      service:
+        name: docker
+        state: started
+        enabled: yes
 
     - name: Adicionar usuário suporte
       user:
         name: suporte
+        groups: docker
         shell: /bin/bash
         password : $1$QbUARykG$p2nthVG8AkDvabKPHwboa1
 
