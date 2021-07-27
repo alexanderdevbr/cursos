@@ -45,3 +45,7 @@ Astronomia & Fotografia
     - Foco: Usar o LCD para focar manualmente em um objeto muito distante, ampliando o máximo no LCD para ajustar
     - Usar timer de disparo
     - Se tiver muita humidade, usar um aquecedor de lente (Lens Heater) e não deixar a camera exposta diretamente no sereno
+
+16/07/2021 - Aula 3
+-------------------
+    - Rever o vídeo pra pegar dicas do Photoshop
