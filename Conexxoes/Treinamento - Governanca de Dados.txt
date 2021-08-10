@@ -1,0 +1,126 @@
+Workshop de Governança e Inovação: Módulo II – Governança de Dados
+------------------------------------------------------------------
+Prof. André Luiz Pacheco
+
+10/08/2021
+==========
+2. Contexto da Governança de Dados na Administração Pública
+- Foco Dados
+- Contexto maior das Organizações Públicas
+- Governança
+    - Diminui o risco de Corrupção (Confirmidade com as normas, integradade, etc.)
+    - Diminui Fraudes 
+    - Diminui Riscos de SI
+
+- Definição de Governança 
+    - Poder é exercido na Administração dos recursos sociais e econômicos de um país visando o desenvolvimentos. 
+    - Autoridade é exercida na administração dos recursos de um país. ]
+    - Governança corporativa é o sistema pelo qual as organizações são dirigidas, monitoradas e incentivadas. 
+    - Sistema pela qual as organizações são dirigidas e controladas. [DIRIGIR e CONTROLAR]
+    - Superar o "conflito de agência", interesses do gestor não estão alinhados com os do proprietário.
+
+- Governança de Dados
+    - Conjunto de políticas, processos, pessoas e tecnlogias para estrutura e administra os ativos de informação, aprimorar a eficiência dos processo de gestão e da qualidade dos dados, garantir a confiabilidade das informações que suportam a tomada de decisão. [Portaria STI/MP 58]
+
+- Governança Corporativa, de Dados e de TI
+    - Modelo COSO (Corporativa)
+    - Modelo DMBok (Dados)
+    - COBIT 2019 / NBR 38500 (TI)
+    - NBR 27002 (Segurança da informação)
+    - ITIL / NBR 20.000 (Serviços)
+    - ISO 35.080 / ISO 33.001 substituindo NBR 12207 e 15504 (desenvolvimento)
+
+FInalidade - Governança de Dados
+    - Estruturas e pessoas
+    - Papéis e responsabilidades
+    - Suporte estratégico para o negócio
+    - Evolução analítica consistente
+    - Base para conformidade com a LGPD
+    - Deve ser grande articuladora entre Dados (Negócios) e TI, mas não pode deixar o risco da burocracia atrapalhar
+
+Governança x Gestão
+    - Governança controlar e direcionar
+    - Gestão produção de resultados
+
+Evolução dos Dados e informação
+    - Dados são registros de atributos de entis, objetos ou fenômenos. Geralmente representados por textos, números, imagens, sons, vídeos. Dados não possuem qualquer significado relevante isoladamente
+    - Metadados - informação estruturada que auxiliam na descrição, identificação, gerenciamento, localização, compreensão e preservação de documentos digitais. Podem ser divididos do ponto de vista técnico ou de negócio.
+    - Informações são resultantes do tratamento dos dados. 
+    - Conhecimento corresponte ao processmaento das informações com significado, premissas, padrões de comportamento, tendências e valores agregados a partir de um conjunto de regras de manipulação dessas informações
+
+
+2.3 Organização da Informação na APF
+    Problemas:
+        - Grande volume de dados
+        - Órgãos atuando de maneira isolada (Acórdão 2789/2019 TCU-Plenário)
+        - Duplicidade de atividades, sistemas e de dados (Acórdão 2362/2015 TCU-Plenário)
+        - Ausência de padronização
+        - Tecnologias e soluções diferentes para o mesmo problema
+        - Ausência de integração e compartilhamento
+    Desafios:
+        - Criar ambiente de integração para simplificar a oferta de serviços públicos
+        - Subsidiar e otimizar a formulação, a implementação, a avaliação e o monitoramento de políticas públicas
+        - Possibilitar análise de condições para acesso a benefícios sociais e suas respectiva manutenção
+        - Fomentar a melhoria da qualidade e da fidedignidade dos dados custodiados pela administração pública (dados de qualidade e atualizados)
+    Soluções:
+        - Plataforma GovData - disponibiliza infraestrutura de Data Lake, permitindo hospedagem e cruzamento de grandes volumes de dados provenientes de várias bases de dados de órgãos da APF
+        - Plataforma ConectaGov - interoperabilidade do governo federal. Uma infraestrutura de TI que propicia:
+            - Integração de serviços púiblicos
+            - compartilhamento de informações e mediação de aplicações
+            - Governança dos ativos e processos de integração
+            - Modelo simplificado de consumo de APIs
+        - Acesso Único - ferramenta de autenticação para integrar os dados de cadastro dispersos na APF
+        - Portal Gov.br - projeto de unificação dos canais digitais do Governo Federal que reuni os serviços públicos ofertados para o cidadão e informações sobre a atuação de todas as áreas do Governo em um só lugar.
+
+Legislações e normas
+    - Lei 12.527/2011 - Lei de Acesso à Informação (LAI)
+    - Lei 13.460/2017 - Serviços públicos
+    - Lei 13.709/2018 - Lei Geral de Proteção de Dados Pessoais (LGPD)
+    - Decreto 10.046/2019 - compartilhamento de dados na APF
+    - Decreto 8.936/2016 - Plataforma e cidadania digital Executivo
+    - Decreto 9.094/2017 - Simplifica do atendimento prestado aos usuários dos serviços públicos
+    - Resolução CNJ 185/2013 - PJe
+    - Resolução CNJ 215/2015 - Classificação da informação
+    - Resolução CNJ 325/2020 - Estratégia Poder Judiciário
+    - Resolução CNJ 335/2020 - Plataforma Digital do Poder Judiciário
+    - Resolução CNJ 363/2021 - Adequação à LGPD
+    - Resolução CNJ 370/2021 - Governança e Gestão de TI
+    - Resolução CNJ 396/2021 - Segurança Cibernética
+    - Portaria CNJ 209/2019 - Política Interna de Dados Abertos do CNJ
+    
+3. Governança e Gestão de Dados
+    - Governança de dados consiste no controle (planejamento, monitoramento e execução) sobre a gestão de ativos de dados
+    - Gestão é função na organização que cuida do planejamento, controle e entrega de ativos de dados e de informação. Todo ciclo de vida do dado deve ser planejado, executa e controlado, distribuído e aperfeiçoado o valor dos ativos de dados e informações (DMBoK)
+
+3.1 Tipos de papéis
+    - Administrador de Dados - AD
+    - Administrador de Banco de Dados - DBA
+    - Curador de Dados de Négocio - Ligado às áreas de negócio da organização. Autoridade sobre o conjunto de dados do seu escopo de negócio. Definição de metadados corretos (glossários de termos, nomes de entidades e atributos, regras de validação, valores válidos, regras de qualidade), identificação de Problemas.
+    - Curador de dados Corporativos - São geralmente ocupante se cargos com poder de decisão. Entender os processos da Gestão e Governança de dados. Apoiar na criação e manutenção de glossário de termos de negócio, apoiar criação e manutenção de modelos de dados conceitual corporativos. Corrigir problemas de qualidade de dados.
+    - Encarregado de Proteção de Dados - DPO, é o responsável por disseminar a cultura de proteção de dados na empresa, criar normas e procedimentos adequados à Lei 13.709/2018 LGPD. É o responsável por receber notificações da ANPD e dos titulares das informações e colocar em prática. DPO tem papel fundamental nas decisões estratégicas das organizações com autonomia sobre as atividades que envolvam qualquer tipo de tratamento de dados e contato direto com a direção da organização para tomada de decisões que possam deixá-la em conformidade com a lei. 
+    - Curador de Dados Técnicos e Operacional, responsável por projetar os mecanismos para integração dos dados. Emitir pareceres técnicos indicando a melhor forma de integração de dados, manter atualizado o catálogo de serviços de integração de dados, apoiar a especialização de mecanismos de integração, apoiar o desenvolvimentos de serviços.
+
+4. Princípios, Importância e Desafios da Gestão de Dados
+    - Gestão de Dados visa controlar e alavancar eficazmente o uso dos ativos de dados, atender e exceder às necessidades de informação de todos os envolvidos (stakeholders) da organização em termos de disponibilidade, Segurança e qualidade. Responsabilidade tanto de TI quanto de seus clientes internos e externos que envolve desde a alta administração, que utiliza dados na geração de informações estratégicas, até profissionais de nível Operacional que muitas vezes são responsáveis pela coleta e produção de dados.
+    - Importância da Gestão de Dados, a informação e o conhecimento foram fundamentais para a vantagem competitiva antes mesmo do surgimento da TI. Possuir informações confiáveis e de alta qualidade podem tomar melhores decisões do que aquelas sem dados (ou com dados não confiáveis).
+        - Dados estão em todos os lugares
+        - Dados como um ativo - valor
+        - Gestão de dados x Gestão de tecnlogia
+        - atividades de gestão de dados
+        - Áreas de conhecimento em gestão de dados
+    - Desafios, a gestão de dados é uma disciplina focada em aprimorar o valor dos dados e informações. A gestão eficaz de dados beneficia a organização e sociedade de várias maneiras. No caso da APF é disciplina fundamental para alavancar o planejamento eficiente de políticas públicas e de disponibilização de serviços digitais ao cidadão usando interoperalidade.
+    - Princípios da Gestão de Dados
+        - Dados são estratégicos
+            - Dados são um ativo de propriedade exclusiva
+            - Valor dos dados pode e deve ser expresso em termos econômicos/estratégicos
+            - Gestão eficaz de dados requer comprometimento da liderança
+        - Requisitos de gerenciamento de daods são requisitos de negócio   
+            - Gerenciar dados significa gerenciar a qualidade dos dados
+            - Necessários metadados para gerenciar dados
+            - Preciso planejar o gerenciamento de dados
+            - Requisitos de gestão de dados devem orientar as decisões de TI
+        - Gerenciar ciclo de vida do dado
+            - Tipos diferentes de dados possuem características diferentes de ciclo de vida
+            - Gerenciar dados inclui gerencia o risco associado aos dados
+
+4.4 - O modelo DMBok
