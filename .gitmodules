@@ -1,0 +1,3 @@
+[submodule "LinuxTips/DescomplicandoDocker/eBook/DescomplicandoDocker"]
+	path = LinuxTips/DescomplicandoDocker/eBook/DescomplicandoDocker
+	url = git@github.com:alexanderpba/DescomplicandoDocker.git
