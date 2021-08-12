@@ -124,3 +124,77 @@ Legislações e normas
             - Gerenciar dados inclui gerencia o risco associado aos dados
 
 4.4 - O modelo DMBok
+    - DMBoK é um modelo completo de gestão de dados. A versão 2 está estruturada em 17 capítulos.
+
+Governança de Dados
+    - Responsabilidade da Alta Administração (Direção e Controle para atingir o objetivo)
+    - Foco em qualidade de dados
+    - Planejamento da Gestão dos Dados
+        - Necessidades estratégicas de dados
+        - Desenvolver e manter estratégia de dados
+        - Estabelecer unidades organizacionais e papeis voltados para dados
+        - Identificar os curadores de dados
+        - Estableecer camadas de Gestão de Dados e de Curadores de Dados
+        - Desenvolver e aprovar políticas, padrões e procedimentos
+        - Evisar e aprovar arquitetura de dados
+        - Planejar e patrocinar projetos e serviços de Gestão de Dados
+        - Estimar o valor dos ativos de dados e custos associados (Riscos)
+    - Controle da Gestão dos Dados
+
+Gestão de Segurança de dados
+    - Prover adequada autenticação, acesso e auditoria de dados e informações.
+    - Estrutura:
+        - Entender as necessidades de segurança de dados e os requisitos regulatórios associados (o que de fato deve se proteger)
+        - Definir Política de segurança de dados
+        - Definir padrões de segurança de dados
+        - Definir procedimento e controle de segurança
+        - Gerenciar usuários, senhas e membros de grupos de usuários (Essencial participação dos Curadores de Dados)
+        - Gerenciar visões e permissões de acesso aos dados
+        - Monitorar autenticação de usuários e comportamento de acesso
+        - Classificar o grau de confidencialidade das informações
+        - Auditar a segurança dos dados
+
+Seguranca da Informação
+    - Atuar preventivamente, protegendo a informação de diversos tipos de ameaças a partir da gestão de riscos, garantindo a continuidade dos negócios, protegendo investimentos, minimizar os dadnos causados por meio de prevenção e redução dos impacots causados por incidentes/acidentes e preservar a confidencialidade de dados sensíveis
+    - No ambito da TI segurança dos dados, sistemas, recursos e serviços
+    - Segurança total não existe
+    - Resolução CNJ 396/2021 de 07/06/2021 - Institui estratégia nacional de segurança Cibernética do poder judiciário (ENSEC-PJ)
+        - Aprimorar Segurança da Informação e Gestão de dados
+    - propriedades
+        - disponibilidade
+        - integridade
+        - confidencialidade
+        - Autenticidade
+        - Não-repúdio
+        - Responsabilidade (accountability)
+    - Medir efetividade da SI (Controles usados são satisfatórios)
+        - NBR ISO/IEC 27002
+            - 15 capítulos
+            - Recomendaçoes
+            - Base comum para desenvolviemnto de normas e politicas de seguranca da informacao
+            - Proteger a informação
+
+Informação sob risco
+    - incidentes
+        - Vírus
+        - Ataques (Hackers)
+        - Indisponibilidade
+        - Vazamento/Furto de informação
+        - Fraudes
+        - Invasão de site na internet
+    - Consquências
+        - Perda financeira
+        - DAnos à imagem
+        - Processos legais
+        - Queda produtividade
+    - Impacto no negócio
+        - Queda na receita
+        - Aumento dos custos
+        - Perdas oportuniaddes e/ou diferencial competitivo
+        - Diminuição de Confiança investidor/cliente/cidadão
+
+Gestão de Riscos
+    - Evitar
+    - Transferir
+    - Mitigar
+    - Aceitar
