@@ -125,3 +125,66 @@ IPV6
 
 
 BGP / MPLS
+==========
+BGP
+- Protocolo de roteamento trocado por um "sistema autônamo" AS (Entidade na internet independente que pode publicar e aprender)
+    - 0 a 64511 são AS Públicos (EGP)
+    - 64512 a 65535 são AS Privadas (IGP)
+- Protocolo robusto que consegue transportar quantidade muito grande de rotas (usado naInternet e Grandes Datacenters)
+- Lento (Faz helo a cada 60 segundos)
+- Contrução de rotas é um 'trabalho artesanal'
+- Frágil pois fica muito na mão do ser humano (Intervenção manual)
+- AS-PATH atributo
+    - é a qtde de saltos entre as AS
+    - evita looping pois a publicação ocorre apenas uma vez
+- Toda vizinhança BGP é uma comunicação TCP porta 179
+- Aprende todas as rotas dos vizinhos
+- Escolhe a melhor rota (Menor qtde de salto entre AS)
+- Full-mesh (todo mundo conversa com todo mundo) - Fórmula: (N*(N-1))/2
+Atributos BGP:
+    - Entrada (No AS)
+        - Prefered-Value, valor preferência quanto maior melhor (padrão 0), só serve no roteador local (um roteador), não funciona entre diferentes roteadores
+        - Local-Preference, valor de preferência de roteador de saída (padrão 100), transita entre os roteadores e influencia todos os roteadores.
+    - Saída
+        - As-Path, artificialmente aumenta número de saltos (Prepend)
+        - Med, quanto menor melhor e funciona quanto o roteador tem dois ou mais lins com uma mesma ISP. Esse atributo não se propaga para outras AS.
+
+
+ACL
+    - Somente uma ACL por direção (Outbound/Inbound) e por interface
+    - Filtrp de pacotes (Firewall Básico)
+    - Classificação (NAT, QoS, VPN, etc)
+    - ACL Padrão define IP de origem (Posiciona mais próximo do destino)
+    - ACL Extendida define IP/Porta/Protocolo (origem e destino) e pode posicionar próximo origem
+    Funcionamento
+        - Tudo que não for permitido é bloquado (Padrão)
+        - Sequência de regras executado Top-Down
+        - Quando uma regra é atendida as demais não são executadas
+    - Identificação ACL no Mundo Hauwei
+        - 2000 - 2999: Básica (Ip de Origem)
+        - 3000 - 3999: Avançada (Ip de Origem, destino, protocolo, porta origem e destino)
+        - 4000 - 4999: L2 (Endereço MAC)
+
+Arquitetura AAA (Triple Way)
+    - Autenticação (Quem é você)
+    - Autorização  (O que você pode fazer)
+    - Auditoria    (Tudo que fizer pode ser auditado)
+    - Protocolos RADIOS (usuário comum) ou TACACS (usuário admin)
+
+VRRP
+    - Trabalha com VIP e VMAC virtual
+    - Um dos roteadores é escolhido como Master
+    - Maior prioridade é escolhido como Master
+    - Preempitivo (Poder de volta), se a prioridade de algum dispositivo mudar uma nova eleição para Master pode ser feita
+    - Prioridade default 100
+    - Prioridade 255 quando o VIP é configurado na interface
+    - Prioridade 0 faz desativar o dispositivo no VRRP
+
+Analise de Qualidade da Rede - NQA
+    - Teste em um dispositivo remoto
+        - Atraso ICMP
+        - Verifica conectividade
+        - Etc.
+    - Mede desemepnho da rede e colhe estatisticas
+    - Resposta do resultado pode ser amarrada em "Track" para tomada de decisões
+    - 
