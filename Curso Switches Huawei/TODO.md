@@ -1,6 +1,9 @@
 Professor: Adilson
 Material.: encurtador.com.br/fAVX7
 
+Switch L2 - Somente MAC em uma mesma rede
+Switch L3 - Possibilidade de roteamento entre redes distintas
+
 Versatile Routing Platform (VRP) - Sistema Operacional dos equipamentos Huawei
 - CE as configurações são "like commit" e precisa ser confirmada
 - As séries S57 já são aplicadas no momento da execução do comando
@@ -27,6 +30,33 @@ Niveis de acesso [0 - 15], sendo 0 o menos privilegiado e o 15 o mais privilegia
 disp cur | b ospf (Begin)
 disp cur | i int  (Include)
 disp cur | e int  (Exclude)
+
+Mostrando os IPs das interfaces
+===============================
+    display ip int brief
+    *down: administratively down
+    !down: FIB overload down
+    ^down: standby
+    (l): loopback
+    (s): spoofing
+    (d): Dampening Suppressed
+    The number of interface that is UP in Physical is 2
+    The number of interface that is DOWN in Physical is 9
+    The number of interface that is UP in Protocol is 2
+    The number of interface that is DOWN in Protocol is 9
+
+    Interface                         IP Address/Mask      Physical   Protocol  
+    Ethernet0/0/0                     unassigned           down       down      
+    Ethernet0/0/1                     unassigned           down       down      
+    GigabitEthernet0/0/0              unassigned           down       down      
+    GigabitEthernet0/0/1              10.0.1.254/24        up         up        
+    GigabitEthernet0/0/2              unassigned           down       down      
+    GigabitEthernet0/0/3              unassigned           down       down      
+    NULL0                             unassigned           up         up(s)     
+    Serial0/0/0                       unassigned           down       down      
+    Serial0/0/1                       unassigned           down       down      
+    Serial0/0/2                       unassigned           down       down      
+    Serial0/0/3                       unassigned           down       down   
 
 Protocolo Spanning Tree Protocol - STP/RSTP/NSTP
 ------------------------------------------------
@@ -187,4 +217,16 @@ Analise de Qualidade da Rede - NQA
         - Etc.
     - Mede desemepnho da rede e colhe estatisticas
     - Resposta do resultado pode ser amarrada em "Track" para tomada de decisões
-    - 
+
+DHCP
+    - Funcionamento "DORA"
+        - DHCP Discovery
+        - DHCP Offer
+        - DHCP Request
+        - DHCP Ack
+    - Escopo configurado com uma faixa de endereços atribuída
+    - Caso não consiga pegar um endereço, é atribuido um Ip 169.254.x.y (APIPA)
+    - Problemas de "Starvation"/"Fake DHCP" (Feature DHCP Snooping)
+    - DHCP Snooping
+        - Recurso de segurança para Analisar mensagens DHCP
+        - Controles para evitar que alguém suba um DHCP falso ou alguém consuma todo escopo DHCP (Faixa de IPs)
